@@ -8,19 +8,20 @@ class PostImagesController < ApplicationController
     @post_image.user_id = current_user.id
     @post_image.save
     redirect_to post_images_path
-  end
+   end
   
-  def index
-  end
+   def index
+     @post_images = PostImage.all
+   end
 
-  def show
-  end
+   def show
+   end
   
-  private
+   private
 
-  def post_image_params
+   def post_image_params
     params.require(:post_image).permit(:shop_name, :image, :caption)
-  end
+   end
   
   
 end
